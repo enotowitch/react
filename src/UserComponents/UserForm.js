@@ -10,6 +10,9 @@ export default function UserForm() {
 			<input className="add" type="submit" value="add" onClick={() => {
 				let name = document.querySelector('.name').value
 				let age = document.querySelector('.age').value
+				document.querySelector('.name').value = ""
+				document.querySelector('.age').value = ""
+				
 				users.push({
 					"name": name,
 					"age": age,

@@ -5,8 +5,8 @@ import User from "./User";
 export default function Users(props) {
 	return (
 		<div className="users">
-			{props.users.map(elem => {
-				return < User user={elem} key={elem.id} />
+			{props.users.map((elem, index) => {
+				return < User user={elem} id={index} key={index} />
 			})}
 		</div>
 	)

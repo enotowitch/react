@@ -4,12 +4,8 @@ import UserForm from './UserComponents/UserForm';
 
 function App() {
 
-	let users = [
-		{ "id": 1, "name": "name1", "age": 18 },
-		{ "id": 2, "name": "name2", "age": 19 },
-		{ "id": 3, "name": "name3", "age": 21 }
-	]
-
+	let findUsersStr = document.cookie.match(/users=\[.*?\]/)[0].replace('users=', '')
+	let users = JSON.parse(findUsersStr);
 
 	return (
 		<div className='wrapper'>

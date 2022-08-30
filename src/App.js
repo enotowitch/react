@@ -1,6 +1,7 @@
 import React from 'react';
 import Users from './UserComponents/Users';
 import UserForm from './UserComponents/UserForm';
+import GetUsers from './UserComponents/GetUsers';
 
 function App() {
 
@@ -8,8 +9,7 @@ function App() {
 		document.cookie = `users=[]`
 		var users = []
 	} else {
-		var findUsersStr = document.cookie.match(/users=\[.*?\]/)[0].replace('users=', '')
-		var users = JSON.parse(findUsersStr);
+		var users = GetUsers()
 	}
 
 

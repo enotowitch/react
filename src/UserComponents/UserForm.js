@@ -26,11 +26,11 @@ export default function UserForm() {
 				document.querySelector('.name').value = ""
 				document.querySelector('.age').value = ""
 
-				users.push({
+				existingUsers.push({
 					"name": name,
 					"age": age,
 				})
-				SaveUser(users)
+				SaveUser(existingUsers)
 
 				render(
 					<User user={{ "name": name, "age": age }} />

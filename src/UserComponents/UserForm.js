@@ -3,17 +3,13 @@ import React, { useState } from "react";
 import GetUsers from "./GetUsers";
 import SaveUser from "./SaveUser";
 import User from "./User"
+import CountUsers from "./CountUsers"
 
 let users = []
 
 export default function UserForm() {
 
 	let existingUsers = GetUsers()
-
-	let [userCount, setUserCount] = useState(existingUsers.length)
-	function incrementUsers() {
-		setUserCount(userCount + 1)
-	}
 
 	return (
 		<div>
@@ -26,6 +22,8 @@ export default function UserForm() {
 				document.querySelector('.name').value = ""
 				document.querySelector('.age').value = ""
 
+				CountUsers()
+
 				existingUsers.push({
 					"name": name,
 					"age": age,
@@ -36,10 +34,8 @@ export default function UserForm() {
 					<User user={{ "name": name, "age": age }} />
 				)
 
-				{ incrementUsers() }
-
 			}} />
-			<div className="counter">Users: {userCount}</div>
+			<div className="counter">Users: </div>
 		</div>
 	)
 }

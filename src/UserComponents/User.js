@@ -1,4 +1,5 @@
 import React from "react";
+import CountUsers from "./CountUsers";
 import GetUsers from "./GetUsers";
 import SaveUser from "./SaveUser";
 
@@ -12,6 +13,8 @@ export default function User(props) {
 			<span className="user__delete" onClick={(event) => {
 				let detach = event.target.closest('.user')
 				detach.parentNode.removeChild(detach)
+
+				CountUsers()
 
 				let users = GetUsers()
 				users.splice(props.id, 1) // array - detached id

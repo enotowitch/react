@@ -6,7 +6,7 @@ export default function Users(props) {
 	return (
 		<div className="users">
 			{props.users.map((elem, index) => {
-				return <User user={elem} id={index} key={index} />
+				return <User user={elem} key={index} />
 			})}
 		</div>
 	)

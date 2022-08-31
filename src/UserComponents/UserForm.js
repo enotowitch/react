@@ -5,11 +5,9 @@ import SaveUser from "./SaveUser";
 import User from "./User"
 import CountUsers from "./CountUsers"
 
-let users = []
+
 
 export default function UserForm() {
-
-	let existingUsers = GetUsers()
 
 	return (
 		<div>
@@ -21,17 +19,27 @@ export default function UserForm() {
 				let age = document.querySelector('.age').value
 				document.querySelector('.name').value = ""
 				document.querySelector('.age').value = ""
+				let id = document.querySelectorAll('.user').length
 
 				CountUsers()
 
-				existingUsers.push({
-					"name": name,
-					"age": age,
-				})
-				SaveUser(existingUsers)
+				SaveUser(name, age, id)
 
 				render(
-					<User user={{ "name": name, "age": age }} />
+					<User user={{ "name": name, "age": age, "id": id }} />
+				)
+
+			}} />
+			{/* TEST */}
+			<input className="test" type="submit" value="test" onClick={() => {
+				let id = document.querySelectorAll('.user').length
+
+				CountUsers()
+
+				SaveUser(id, id, id)
+
+				render(
+					<User user={{ "name": id, "age": id, "id": id }} />
 				)
 
 			}} />

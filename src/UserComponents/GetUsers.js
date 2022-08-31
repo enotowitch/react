@@ -1,8 +1,16 @@
 import React from "react";
 
 export default function GetUsers() {
-	var findUsersStr = document.cookie.match(/users=\[.*?\]/)[0].replace('users=', '') // get string
-	var users = JSON.parse(findUsersStr); // to array
+	let arr = []
+	// todo 999
+	for (let i = 0; i < 999; i++) {
+		if (localStorage[i] != undefined) {
+			let str = "{" + localStorage[i] + "}";
+			let obj = JSON.parse(str)
+			arr.push(obj)
+		}
 
-	return users
+	}
+
+	return arr
 }

@@ -6,19 +6,14 @@ import CountUsers from './UserComponents/CountUsers';
 
 function App() {
 
-	if (document.cookie == '') {
-		document.cookie = `users=[]`
-		var users = []
-	} else {
-		var users = GetUsers()
-	}
+	var users = GetUsers()
 
 
 	return (
 		<div className='wrapper'>
 			<UserForm />
 			<Users users={users} />
-			{setTimeout(() => CountUsers(), 1)}
+			{setTimeout(() => CountUsers(), 0)}
 		</div>
 	)
 }

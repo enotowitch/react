@@ -1,6 +1,5 @@
 import React from "react";
 
-export default function SaveUser(users) {
-	let usersStr = JSON.stringify(users) // back to string
-	document.cookie = `users=${usersStr}` // save
+export default function SaveUser(name, age, id) {
+	localStorage.setItem(`${id}`, `"name":"${name}", "age":"${age}", "id":"${id}"`)
 }

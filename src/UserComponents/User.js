@@ -16,9 +16,7 @@ export default function User(props) {
 
 				CountUsers()
 
-				let users = GetUsers()
-				users.splice(props.id, 1) // array - detached id
-				SaveUser(users)
+				localStorage.removeItem(props.user.id) // delete user
 			}}>X</span>
 		</div>
 	)

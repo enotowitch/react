@@ -1,7 +1,5 @@
 import React from "react";
 import CountUsers from "./CountUsers";
-import GetUsers from "./GetUsers";
-import SaveUser from "./SaveUser";
 
 export default function User(props) {
 

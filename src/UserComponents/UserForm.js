@@ -1,5 +1,5 @@
-import { render } from "@testing-library/react";
 import React from "react";
+import { render } from 'react-dom';
 import SaveUser from "./SaveUser";
 import User from "./User"
 import CountUsers from "./CountUsers"
